@@ -17,7 +17,7 @@ get_ages = True
 
 freq_bands = [[1, 4], [4, 8], [8, 13], [13, 24], [30, 45]]
 
-base_dir = "/well/woolrich/users/wlo995/Gohil2024_AgeCognitionEffectsRSNs"
+base_dir = "/well/woolrich/users/wlo995/Gohil2024_AgeEffectsRSNs"
 files = sorted(glob(f"{base_dir}/1_preproc_and_source_recon/data/src/*/sflip_parc-raw.fif"))
 
 if calc_spectra:
@@ -27,7 +27,7 @@ if calc_spectra:
     data = Data(files, picks="misc", reject_by_annotation="omit", n_jobs=16)
     data = data.trim_time_series(n_embeddings=15, sequence_length=4000)
 
-    f, psd, coh, w = static.welch_spectra(
+    f, psd, coh, w = static.multitaper_spectra(
         data=data,
         window_length=500,
         sampling_frequency=250,

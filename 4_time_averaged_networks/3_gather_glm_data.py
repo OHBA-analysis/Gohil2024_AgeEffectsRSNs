@@ -7,7 +7,7 @@ from glob import glob
 
 from osl_dynamics.analysis import power, connectivity
 
-base_dir = "/well/woolrich/users/wlo995/Gohil2024_AgeCognitionEffectsRSNs"
+base_dir = "/well/woolrich/users/wlo995/Gohil2024_AgeEffectsRSNs"
 
 # Source data file and subjects IDs
 files = sorted(glob(f"{base_dir}/1_preproc_and_source_recon/data/src/*/sflip_parc-raw.fif"))
